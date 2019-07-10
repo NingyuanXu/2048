@@ -67,35 +67,28 @@ public class GameBoardTest {
     }
 
     @Test
-    public void moveLeft() {
-    }
-
-    @Test
-    public void moveRight() {
-    }
-
-    @Test
-    public void moveUp() {
-    }
-
-    @Test
-    public void moveDown() {
-    }
-
-    @Test
-    public void inovkeCreateTile() {
-    }
-
-    @Test
-    public void checkGameOver() {
-    }
-
-    @Test
     public void initGame() {
+        GameBoard gameBoard1 = new GameBoard();
+        gameBoard1.initGame();
+        assertEquals(gameBoard1.isOver,false);
+        assertEquals(gameBoard1.isAnimate,true);
+
     }
 
     @Test
     public void createTile() {
+        GameBoard gameBoard = new GameBoard();
+        gameBoard.createTile();
+        boolean exist = false;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (gameBoard.tiles[i][j].value ==2 ||
+                        gameBoard.tiles[i][j].value ==4) {
+                    exist = true;
+                }
+            }
+        }
+        assertEquals(exist,true);
     }
 
     @Test
@@ -110,18 +103,5 @@ public class GameBoardTest {
             }
         }
         assertEquals(gameBoard.getBlankTiles(),list);
-    }
-
-
-    @Test
-    public void invokeAnimate() {
-    }
-
-    @Test
-    public void moveAnimate() {
-    }
-
-    @Test
-    public void mergeAnimate() {
     }
 }

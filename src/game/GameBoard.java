@@ -21,11 +21,11 @@ class GameBoard extends JPanel implements KeyListener {
 
 
     public Tile[][] tiles = new Tile[4][4];
-    private boolean isOver;
+    public boolean isOver;
     public boolean isMove;
     public boolean isMerge;
-    private boolean isAnimate;
-    private Color bgColor;
+    public boolean isAnimate;
+    public Color bgColor;
 
 
     public GameBoard() {
