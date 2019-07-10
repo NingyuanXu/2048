@@ -3,6 +3,10 @@ package game;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import game.Tile;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -96,7 +100,18 @@ public class GameBoardTest {
 
     @Test
     public void getBlankTiles() {
+        GameBoard gameBoard = new GameBoard();
+        List<Tile> list = new ArrayList<Tile>();
+        for (int i=0; i< 4; i++) {
+            for (int j = 0; j<4; j++) {
+                if (gameBoard.tiles[i][j].value == 0) {
+                    list.add(gameBoard.tiles[i][j]);
+                }
+            }
+        }
+        assertEquals(gameBoard.getBlankTiles(),list);
     }
+
 
     @Test
     public void invokeAnimate() {

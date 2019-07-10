@@ -20,7 +20,7 @@ class GameBoard extends JPanel implements KeyListener {
     private static final int PAINT_NUM = 20;
 
 
-    private Tile[][] tiles = new Tile[4][4];
+    public Tile[][] tiles = new Tile[4][4];
     private boolean isOver;
     public boolean isMove;
     public boolean isMerge;
